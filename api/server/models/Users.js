@@ -6,8 +6,8 @@ const Types = Schema.Types;
 
 // Create User Schema
 const UserSchema = new Schema({
-    firstName: { type: Types.String, required: true },
-    lastName: { type: Types.String, required: true }
+	firstName: { type: Types.String, required: true },
+	lastName: { type: Types.String, required: true }
 });
 
 // Register the model
