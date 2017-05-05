@@ -1,7 +1,7 @@
 'use strict';
 
 const server = require('./server/server');
-const host = process.env.host || 'localhost';
-const port = process.env.port || 7000;
+const config = require('./server/config/config');
 
-server.start(host, port);
+
+server.start(config.server.host, config.server.port);

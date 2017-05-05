@@ -2,7 +2,8 @@
 
 const Hapi = require('hapi');
 const plugins = require('./modules/plugins');
-const routes = require('./core/routes');
+const Routes = require('./core/routes');
+const db = require('./config/database');
 
 const start = (host, port) => {
 
@@ -10,7 +11,7 @@ const start = (host, port) => {
 
 		// Initialize the server
 		const server = new Hapi.Server();
-		server.connection({ host, port });
+		server.connection({ host, port, routes: { cors: true } });
 
 		// Register all plugins
 		server.register(plugins, (error) => {
@@ -20,7 +21,7 @@ const start = (host, port) => {
 			}
 
 			// Initialize Routes
-			server.route(routes(server));
+			server.route(Routes.endpoints);
 
 			// Start listening for requests
 			server.start((error) => {
