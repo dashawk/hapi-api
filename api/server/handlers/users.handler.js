@@ -46,7 +46,6 @@ const createUser = {
 	description: 'Register a new user',
 	validate: {
 		payload: {
-			userID: Joi.string().required(),
 			firstName: Joi.string().required(),
 			lastName: Joi.string().required(),
 		}
