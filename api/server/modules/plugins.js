@@ -1,5 +1,11 @@
 'use strict';
 
-const Plugins = [];
+const Plugins = [
+    {
+        register: require('hapi-auth-jwt2'),
+        options: {}
+
+    }
+];
 
 module.exports = Plugins;
