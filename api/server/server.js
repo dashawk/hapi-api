@@ -1,9 +1,13 @@
 'use strict';
 
 const Hapi = require('hapi');
-const plugins = require('./modules/plugins');
-const Routes = require('./core/routes');
-const db = require('./config/database');
+const plugins = require('./modules/plugins');	// Register HapiJS plugins here
+const Routes = require('./core/routes');	// Get all routes
+
+/**
+ * TODO: Need to start database connection before initializing the Hapi Server
+ */
+require('./config/database');	
 
 const start = (host, port) => {
 
